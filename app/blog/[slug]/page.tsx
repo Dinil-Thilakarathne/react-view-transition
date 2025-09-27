@@ -41,6 +41,13 @@ export default function Page({ params }: PageProps) {
           <ViewTransition name={`blog-title-${blog.slug}`}>
             <p className="text-4xl font-bold">{blog.title}</p>
           </ViewTransition>
+          <div className="blog-content">
+            {blog.content.map((para, index) => (
+              <p key={index} className="max-w-3xl text-lg my-4">
+                {para}
+              </p>
+            ))}
+          </div>
         </div>
       </ViewTransition>
     </main>
