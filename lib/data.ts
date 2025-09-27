@@ -30,6 +30,14 @@ export const posts: PostProps[] = [
   },
 ];
 
+export interface BlogPost {
+  slug: string;
+  image: StaticImageData;
+  title: string;
+  description: string;
+  content: string[];
+}
+
 export interface ProfileCardProps {
   imgBgColor: string;
   name: string;
@@ -59,5 +67,44 @@ export const dummyProfiles: ProfileCardProps[] = [
     name: "Alice Johnson",
     jobTitle: "UX Designer",
     desc: "Focused on creating intuitive and user-friendly designs for digital products.",
+  },
+];
+
+import blogImage from "@/public/image.jpg";
+import { StaticImageData } from "next/image";
+
+export const dummyBlog: BlogPost[] = [
+  {
+    slug: "react-view-transitions",
+    image: blogImage,
+    title: "Exploring React’s New View Transitions API",
+    description:
+      "A quick demo showing how React’s View Transitions API can create smooth, native-like animations when switching between pages or components.",
+    content: [
+      "The View Transitions API introduces a new way to handle UI changes in React applications. Instead of abrupt jumps between routes or component states, it enables seamless animations that feel smooth and connected. This approach not only improves the visual flow of an app but also helps users stay oriented as they move through different parts of the interface.",
+      "In this demo, I’ve applied the View Transitions API to a simple blog layout. When navigating from the blog list to a single post, the transition is animated to create a more natural experience. While the example is minimal, the same concept can be extended to complex applications, making interactions more engaging without requiring heavy animation libraries.",
+    ],
+  },
+  {
+    slug: "nextjs-view-transition-demo",
+    image: blogImage,
+    title: "Animating Navigation in Next.js",
+    description:
+      "A walkthrough of wiring the View Transitions API into a Next.js application to add motion to route changes without external libraries.",
+    content: [
+      "Next.js embraces the View Transitions API through the app router, letting developers animate navigations with very little code. By pairing native transitions with server components, you can deliver fluid page changes that keep users oriented.",
+      "This demo highlights how to scope transitions to particular elements, ensuring only the relevant pieces of the UI animate. The result is a polished experience that feels fast and intentional.",
+    ],
+  },
+  {
+    slug: "designing-with-transitions",
+    image: blogImage,
+    title: "Designing Delightful UI with Transitions",
+    description:
+      "Practical guidance for applying subtle yet effective transitions that improve usability and perceived performance.",
+    content: [
+      "Thoughtful motion design helps users build a mental model of your interface. With view transitions, you can connect states by animating key elements rather than replacing entire screens instantly.",
+      "When introducing transitions, focus on intent: what should remain stable, and what should guide attention? Balancing these considerations yields interfaces that feel both informative and calm.",
+    ],
   },
 ];
