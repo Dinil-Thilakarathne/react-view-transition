@@ -22,8 +22,8 @@ export default function Page({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen w-full items-center justify-center flex flex-col">
-      <ViewTransition name={`blog-${blog.slug}`}>
+    <ViewTransition name={`blog-${blog.slug}`}>
+      <main className="min-h-screen w-full items-center justify-center flex flex-col my-8">
         <div className=" flex flex-col gap-y-2 items-start justify-center">
           <ViewTransition name={`blog-ctn-${blog.slug}`}>
             <Link href="/" className="text-sm relative ml-auto">
@@ -49,7 +49,7 @@ export default function Page({ params }: PageProps) {
             ))}
           </div>
         </div>
-      </ViewTransition>
-    </main>
+      </main>
+    </ViewTransition>
   );
 }
